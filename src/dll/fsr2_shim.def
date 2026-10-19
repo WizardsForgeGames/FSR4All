@@ -1,0 +1,14 @@
+EXPORTS
+    ffxFsr2ContextCreate
+    ffxFsr2ContextDestroy
+    ffxFsr2ContextDispatch
+    ffxFsr2ContextGenerateReactiveMask
+    ffxFsr2ContextGetGpuMemoryUsage
+    ffxFsr2GetGpuMemoryUsage
+    ffxFsr2GetUpscaleRatioFromQualityMode
+    ffxFsr2GetRenderResolutionFromQualityMode
+    ffxFsr2GetJitterPhaseCount
+    ffxFsr2GetJitterOffset
+    ffxFsr2ResourceIsNull
+    ffxFsr2GetEffectVersion
+    ffxFsr2SetGlobalDebugMessage

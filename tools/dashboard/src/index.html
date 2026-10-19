@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' fsr:;">
+  <title>FSR4 Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toolbar">
+    <div class="toolbar-section">
+      <label for="pair-select">Pair:</label>
+      <select id="pair-select"></select>
+    </div>
+    <div class="toolbar-section">
+      <button id="btn-side-by-side" class="mode-btn">Side by Side</button>
+      <button id="btn-swipe" class="mode-btn active">Swipe</button>
+    </div>
+    <div class="toolbar-section">
+      <button id="btn-input-vs-upscaled" class="compare-btn active">Input vs Upscaled</button>
+      <button id="btn-upscaled-vs-ref" class="compare-btn" disabled>vs Reference</button>
+    </div>
+    <div class="toolbar-section">
+      <button id="btn-fit">Fit</button>
+      <button id="btn-1x">1:1</button>
+      <span id="zoom-label">100%</span>
+    </div>
+    <div class="toolbar-section toolbar-right">
+      <span id="pixel-info">R:--- G:--- B:--- (---, ---)</span>
+    </div>
+  </div>
+
+  <div id="viewport">
+    <!-- Side-by-side mode -->
+    <div id="side-by-side" class="view-mode">
+      <div class="image-panel" id="panel-left">
+        <div class="panel-label" id="label-left">Input</div>
+        <canvas id="canvas-left"></canvas>
+      </div>
+      <div class="panel-divider"></div>
+      <div class="image-panel" id="panel-right">
+        <div class="panel-label" id="label-right">Upscaled</div>
+        <canvas id="canvas-right"></canvas>
+      </div>
+    </div>
+
+    <!-- Swipe mode -->
+    <div id="swipe" class="view-mode active">
+      <canvas id="canvas-swipe-left"></canvas>
+      <canvas id="canvas-swipe-right"></canvas>
+      <div id="swipe-divider">
+        <div class="swipe-handle"></div>
+      </div>
+      <div class="swipe-label-left" id="swipe-label-left">Input</div>
+      <div class="swipe-label-right" id="swipe-label-right">Upscaled</div>
+    </div>
+  </div>
+
+  <script src="pixel-inspector.js"></script>
+  <script src="image-viewer.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

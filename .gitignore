@@ -1,0 +1,39 @@
+# Extracted weight binaries (regenerate via scripts/extract_fsr4_weights.py)
+weights/
+
+# AMD-derived generated artifacts (regenerate from your own FSR4 source; never commit)
+shaders/compiled/
+src/dll/fsr4_shader_blobs.h
+src/dll/fsr4_initializer_blob.h
+src/dll/fsr4_encoder1_weights.h
+
+# Python
+__pycache__/
+*.pyc
+
+# Test images and output (large BMPs)
+test_images/
+output/
+
+# Experiments (keep small text captures, exclude profiler binaries/large exports)
+experiments/*.xlsx
+experiments/*.ncu-rep
+experiments/ncu_*
+
+# Build
+build/
+*.obj
+*.lib
+*.dll
+*.exe
+*.pdb
+
+# Frame dumps and comparison captures (GBs)
+frames/
+Comparisons/
+
+# npm
+node_modules/
+
+# D3D12 Agility SDK (NuGet download, extracted)
+external/

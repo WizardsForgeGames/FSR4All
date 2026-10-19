@@ -1,0 +1,12 @@
+{
+  "name": "fsr4-dashboard",
+  "version": "1.0.0",
+  "description": "FSR4 upscaling visual validation dashboard",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^28.1.0"
+  }
+}

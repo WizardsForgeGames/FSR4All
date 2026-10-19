@@ -1,0 +1,6 @@
+EXPORTS
+    ffxCreateContext
+    ffxDestroyContext
+    ffxConfigure
+    ffxQuery
+    ffxDispatch

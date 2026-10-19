@@ -1,0 +1,84 @@
+=== FSR4 Inference Benchmark ===
+GPU:        NVIDIA GeForce RTX 4090
+Resolution: 640x360
+Warmup:     5 iterations
+Benchmark:  10 iterations
+
+Loaded manifest: 78 layers
+All weights loaded successfully (126.9 KB GPU)
+FSR4 model initialized:
+  Weights:    126.9 KB GPU
+  Buffers:    38.9 MB GPU
+  Workspace:  25.7 MB GPU
+  Resolution: 640x360 -> 640x360
+Warming up (5 iters)...
+Profiling per-layer breakdown...
+
+Per-Layer Breakdown (single iteration):
+  Layer                                      Time(ms)  %Total
+  ------------------------------------------ --------  ------
+  enc1_downscale (7->16, k2s2 FP16)             0.021    0.3%
+  enc2_res0 (ConvNext 16ch)                     1.599   20.0%
+  enc2_res1 (ConvNext 16ch)                     1.401   17.5%
+  enc2_skip_copy                                0.004    0.1%
+  enc2_downscale (16->32, k2s2)                 0.346    4.3%
+  enc3_res0 (FasterNet 32ch)                    0.329    4.1%
+  enc3_res1 (FasterNet 32ch)                    1.349   16.9%
+  enc3_skip_copy                                0.003    0.0%
+  enc3_downscale (32->64, k2s2)                 0.025    0.3%
+  bn_res0 (FasterNet 64ch)                      1.076   13.5%
+  bn_res1 (FasterNet 64ch)                      0.513    6.4%
+  bn_res2 (FasterNet 64ch)                      0.125    1.6%
+  bn_upscale (64->32, CT k2s2)                  0.031    0.4%
+  dec3_skip_add                                 0.004    0.1%
+  dec3_res0 (FasterNet 32ch)                    0.168    2.1%
+  dec3_res1 (FasterNet 32ch)                    0.173    2.2%
+  dec3_upscale (32->16, CT k2s2)                0.043    0.5%
+  dec2_skip_add                                 0.006    0.1%
+  dec2_res0 (ConvNext 16ch)                     0.348    4.4%
+  dec2_res1 (ConvNext 16ch)                     0.343    4.3%
+  dec2_upscale (16->8, CT k2s2)                 0.088    1.1%
+  ------------------------------------------ --------  ------
+  Total                                         7.995  100.0%
+  Throughput (FPS)                              125.1
+
+Throughput benchmark (10 iterations):
+  Total:      38.64 ms
+  Average:    3.86 ms/frame
+  Throughput: 258.8 FPS
+
+Averaged Per-Layer (10 iterations):
+  Layer                                      Time(ms)  %Total
+  ------------------------------------------ --------  ------
+  enc1_downscale (7->16, k2s2 FP16)             0.017    0.6%
+  enc2_res0 (ConvNext 16ch)                     0.351   12.1%
+  enc2_res1 (ConvNext 16ch)                     0.364   12.6%
+  enc2_skip_copy                                0.004    0.1%
+  enc2_downscale (16->32, k2s2)                 0.099    3.4%
+  enc3_res0 (FasterNet 32ch)                    0.190    6.6%
+  enc3_res1 (FasterNet 32ch)                    0.176    6.1%
+  enc3_skip_copy                                0.004    0.1%
+  enc3_downscale (32->64, k2s2)                 0.025    0.9%
+  bn_res0 (FasterNet 64ch)                      0.108    3.7%
+  bn_res1 (FasterNet 64ch)                      0.112    3.9%
+  bn_res2 (FasterNet 64ch)                      0.118    4.1%
+  bn_upscale (64->32, CT k2s2)                  0.029    1.0%
+  dec3_skip_add                                 0.005    0.2%
+  dec3_res0 (FasterNet 32ch)                    0.174    6.0%
+  dec3_res1 (FasterNet 32ch)                    0.191    6.6%
+  dec3_upscale (32->16, CT k2s2)                0.043    1.5%
+  dec2_skip_add                                 0.005    0.2%
+  dec2_res0 (ConvNext 16ch)                     0.399   13.8%
+  dec2_res1 (ConvNext 16ch)                     0.389   13.5%
+  dec2_upscale (16->8, CT k2s2)                 0.088    3.0%
+  ------------------------------------------ --------  ------
+  Total                                         2.891  100.0%
+  Throughput (FPS)                              345.9
+
+Memory Usage:
+  Weights:    126.9 KB
+  Buffers:    13.2 MB
+  Workspace:  25.7 MB
+  Total VRAM: 39.0 MB
+
+=== BENCHMARK COMPLETE ===
